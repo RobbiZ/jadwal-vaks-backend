@@ -1,0 +1,35 @@
+
+$primary-color    : #2a57d8;
+$secondary-color  : #60b911;
+$dark-color       : #343e49;
+$soft-color       : #bec0c5;
+$bg-color         : #f3f5f9;
+$link-color       : #9cb5e8;
+
+
+
+// font
+$font : 'Montserrat', sans-serif;
+
+
+
+// Responsive
+
+$break-small: 480px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large + 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+
+  @else if $media == view-mobile {
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  }
+}

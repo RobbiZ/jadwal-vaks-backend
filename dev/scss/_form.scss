@@ -1,0 +1,158 @@
+.field {
+    margin-bottom: 20px;
+    label {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 400;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input {
+        border:1px solid #c7d5e1;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 6px;
+    }
+
+    .file-upload {
+        width: 100%;
+        height: 80px;
+        border:1px dashed #c7d5e1;
+        position: relative;
+        background: #f7f9fb;
+        display: block;
+        cursor: pointer;
+        border-radius: 6px;
+        span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transform: translate(-50%,-50%);
+            font-size: 11px;
+            color: #343e49;
+
+            strong {
+                font-weight: 500;
+                color: $primary-color;
+            }
+
+            .icon-file {
+                position: absolute;
+                transform: translate(-43px,-10px);
+            }
+        }
+
+        input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        @include respond-to(handhelds) {
+            span {
+                .icon-file {
+                    position: relative;
+                    transform: translate(-0px,0px);
+                    display: block;
+                    margin: 0 auto;
+
+                }
+            }
+
+        }
+    }
+
+}
+
+#field-wysiwyg {
+    
+    #mceu_11 {
+        border-radius: 6px !important;
+        overflow: hidden;
+        border-color: #c7d5e1 !important;
+    }
+
+    .mce-panel {
+        background: #eaf2fa !important;
+
+        .mce-btn,
+        .mce-btn button,
+        .mce-ico,
+        .mce-btn.mce-active, .mce-btn.mce-active:hover
+         {
+            background: transparent !important;
+            color: #70a0cf !important;
+        }
+    }
+
+    #mceu_21-body {
+        display: none;
+    }
+
+    #mceu_21 {
+        border-width: 0px !important;
+    }
+}
+
+.checkbox {
+  margin: 0.5rem;
+  display: inline-block;
+  padding-right: 40px;
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    + .checkbox-label {
+      &:before {
+        content: '';
+        background: $bg-color;
+        border-radius: 100%;
+        border: 1px solid $soft-color;
+        display: inline-block;
+        width: 1.4em;
+        height: 1.4em;
+        position: relative;
+        margin-right: 8px; 
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        transition: all 250ms ease;
+      }
+    }
+    &:checked {
+      + .checkbox-label {
+        &:before {
+          background-color: $secondary-color;
+          box-shadow: inset 0 0 0 4px $bg-color;
+          border-color: $secondary-color;
+        }
+      }
+    }
+    
+     
+  }
+}
+
+.action-form {
+    margin-top: 20px;
+    width: 100%;
+    text-align: right;
+
+    @include respond-to(handhelds) {
+        text-align: left;
+
+        .checkbox label, .radio label {
+            padding-left: 0px !important;
+        }
+
+        .button-primary {
+            float: right;
+        }
+    }
+
+}

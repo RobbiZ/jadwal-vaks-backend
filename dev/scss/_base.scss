@@ -1,0 +1,111 @@
+* {
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+
+body {
+    width: 100%;
+    font-size: 14px;
+    font-family: $font;
+    font-weight: 400;
+    background: $bg-color;
+    color: $dark-color;
+}
+
+a {
+    transition: all 0.3s;
+    &:hover {
+        text-decoration: none
+    }
+}
+
+.heading {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $dark-color;
+}
+
+.content {
+    padding-top: 130px;
+    padding-bottom: 100px;
+}
+
+.btn-o {
+    border-radius: 100px;
+    font-size: 11px;
+    color: $link-color;
+    display: inline-block;
+    padding: 3px 12px;
+    border: 1px solid $link-color;
+    &:hover {
+        color: $link-color;
+    }
+}
+
+
+.button {
+    display: inline-block;
+    color: #ffffff;
+    line-height: 37px;
+    text-align: center;
+    width: 123px;
+    border-radius: 4px;
+    border: 0px !important;
+}
+
+.button-primary {
+    background: $primary-color;
+    box-shadow: 0px 0px 8px 0px rgba(104,142,251,0.75), 0px 8px 12px -5px rgba(106, 145, 216, 0.75);
+    @extend .button;
+    &:hover {
+        color: #fff;
+        background: darken($primary-color,10%);
+    }
+
+}
+.button-cancel {
+    background: #dee2e9;
+    color:  #abb5c9;
+    @extend .button;
+    &:hover {
+         background: darken(#dee2e9,5%);
+    }
+
+}
+
+
+.icon-file {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background:url(../images/icon.png)no-repeat;
+    &.file-video {
+        background-position: 0px 0px;
+    }
+    
+    &.file-resource {
+        background-position: -35px 0px;
+    }
+
+    &.block {
+        width: 30px;
+        height: 30px;
+        background-color: #f7f9fb;
+        border: 1px solid #c7d5e1;
+        background-size: 50px;
+        border-radius: 4px;
+        float: left;
+
+        &.file-video {
+            background-position: 1px 1px;
+        }
+
+        &.file-resource {
+            background-position: -24px 2px;
+        }
+
+    }
+
+}
