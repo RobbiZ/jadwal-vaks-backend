@@ -14,9 +14,9 @@
 		mysqli_close($kon);
 
 		if($row){
-			echo json_encode(['status'=>true, 'text'=>'Berhasil Login']);
+			echo json_encode(['status'=>true]);
 		}else{
-			echo json_encode(['status'=>false, 'text'=>'Gagal Login, Cek Username dan Password']);
+			echo json_encode(['status'=>false]);
 		}
 	}
 	

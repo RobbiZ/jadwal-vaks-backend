@@ -6,13 +6,12 @@
 
 		$username = $_GET['username'];
 		
-		$sql = "SELECT vacid, custname, plasmaname, address, city, phone, area, tanggal, populasi, jenis, umur, aplikasi, productname
-				FROM vaksinasi, plasma, user, customer, product 
+		$sql = "SELECT custname, plasmaname, tanggal, populasi, jenis
+				FROM vaksinasi, plasma, user, customer 
 				WHERE vaksinasi.plasmacode = plasma.plasmacode 
 				AND vaksinasi.pelaksana = user.uid 
-				AND vaksinasi.stockcode = product.stockcode
 				AND plasma.custcode = customer.custcode
-				AND vaksinasi.status = 'BELUM'
+				AND vaksinasi.status = 'SUDAH'
 				AND user.username = '$username'
 				ORDER BY tanggal DESC ";
 		
