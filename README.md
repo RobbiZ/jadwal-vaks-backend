@@ -1,2 +1,2 @@
 # jadwal-vaks-backend
-First Commit
+Jadwal Vaksinasi Backend API
