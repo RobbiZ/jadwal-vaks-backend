@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Okt 2018 pada 11.13
--- Versi Server: 5.6.21
+-- Generation Time: Nov 28, 2018 at 01:49 AM
+-- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE IF NOT EXISTS `customer` (
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`custcode`, `custname`, `category`, `salesman`) VALUES
@@ -129,7 +129,7 @@ INSERT INTO `customer` (`custcode`, `custname`, `category`, `salesman`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `plasma`
+-- Table structure for table `plasma`
 --
 
 CREATE TABLE IF NOT EXISTS `plasma` (
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `plasma` (
 ) ENGINE=InnoDB AUTO_INCREMENT=298 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `plasma`
+-- Dumping data for table `plasma`
 --
 
 INSERT INTO `plasma` (`plasmacode`, `custcode`, `plasmaname`, `address`, `city`, `area`, `phone`) VALUES
@@ -338,7 +338,7 @@ INSERT INTO `plasma` (`plasmacode`, `custcode`, `plasmaname`, `address`, `city`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE IF NOT EXISTS `product` (
@@ -349,7 +349,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`stockcode`, `productname`, `productline`, `package`) VALUES
@@ -625,7 +625,7 @@ INSERT INTO `product` (`stockcode`, `productname`, `productline`, `package`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
@@ -637,7 +637,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`uid`, `username`, `password`, `role`, `token`) VALUES
@@ -652,7 +652,7 @@ INSERT INTO `user` (`uid`, `username`, `password`, `role`, `token`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `vaksinasi`
+-- Table structure for table `vaksinasi`
 --
 
 CREATE TABLE IF NOT EXISTS `vaksinasi` (
@@ -674,14 +674,25 @@ CREATE TABLE IF NOT EXISTS `vaksinasi` (
   `reschedule` enum('A','B','C','D','E','F','G','H') DEFAULT NULL,
   `newdate` date DEFAULT NULL,
   `cancel` enum('1','2','3','4') DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `vaksinasi`
+-- Dumping data for table `vaksinasi`
 --
 
 INSERT INTO `vaksinasi` (`vacid`, `plasmacode`, `stockcode`, `pelaksana`, `tanggal`, `jenis`, `populasi`, `umur`, `aplikasi`, `status`, `donumber`, `batch`, `kmstart`, `kmfinish`, `remark`, `reschedule`, `newdate`, `cancel`) VALUES
-(1, 172, '8202340', 12, '2018-08-28', 'BROILER', 5000, 5, 'SUBKUTAN', 'SUDAH', '0J900818000123', '998HUY76', 1000, 1050, '', NULL, NULL, NULL);
+(1, 172, '8202340', 16, '2018-08-28', 'BROILER', 5000, 5, 'SUBKUTAN', 'SUDAH', '0J900818000123', '998HUY76', 1000, 1050, '', NULL, NULL, NULL),
+(2, 144, '8202515', 16, '2018-10-11', 'BROILER', 4000, 4, 'SUBKUTAN', 'SUDAH', '0j90118000133', '67BG988', 45321, 45339, '', NULL, NULL, NULL),
+(3, 141, '8202350', 16, '2018-10-22', 'LAYER', 3500, 49, 'IM-DADA', 'SUDAH', '0j90118000143', '67BG988', 45321, 45339, '', NULL, NULL, NULL),
+(4, 274, '8200057', 16, '2018-10-24', 'PEJANTAN', 2500, 37, 'SAYAP', 'SUDAH', '0j90118000153', '67BG988', 45321, 45339, '', NULL, NULL, NULL),
+(5, 170, '8200048', 16, '2018-10-25', 'LAYER', 5000, 77, 'IM-PAHA', 'SUDAH', '0j90118000163', '67BG988', 45321, 45341, '', NULL, NULL, NULL),
+(6, 168, '8200018', 16, '2018-10-21', 'BROILER', 1800, 4, 'T-MATA', 'SUDAH', '0j90118000123', '67BG988', 45321, 45341, '', NULL, NULL, NULL),
+(7, 295, '8200016', 16, '2018-10-30', 'BROILER', 3000, 5, 'SUBKUTAN', 'BELUM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 205, '8202195', 16, '2018-10-27', 'PEJANTAN', 2700, 25, 'SPRAY', 'BELUM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 207, '8200016', 16, '2018-11-30', 'BROILER', 3000, 4, 'SUBKUTAN', 'BELUM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, 229, '8200016', 16, '2018-11-30', 'BROILER', 4000, 4, 'SUBKUTAN', 'BELUM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 138, '8200057', 16, '2018-11-28', 'BROILER', 5000, 5, 'SAYAP', 'BELUM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 137, '8200005', 16, '2018-11-28', 'LAYER', 5000, 37, 'IM-DADA', 'BELUM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -735,7 +746,7 @@ MODIFY `uid` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 -- AUTO_INCREMENT for table `vaksinasi`
 --
 ALTER TABLE `vaksinasi`
-MODIFY `vacid` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `vacid` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

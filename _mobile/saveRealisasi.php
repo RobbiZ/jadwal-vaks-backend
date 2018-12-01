@@ -6,7 +6,8 @@
 
 		$username = $_GET['username'];
 		
-		$sql = "SELECT vacid, custname, plasmaname, address, city, phone, area, tanggal, populasi, jenis, umur, aplikasi, productname
+		$sql = "SELECT vacid, custname, plasmaname, address, city, phone, area, 
+				tanggal, populasi, jenis, umur, aplikasi, productname
 				FROM vaksinasi, plasma, user, customer, product 
 				WHERE vaksinasi.plasmacode = plasma.plasmacode 
 				AND vaksinasi.pelaksana = user.uid 
