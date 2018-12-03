@@ -8,46 +8,43 @@ $db = new DbOperation();
 
 $response = array(); 
 
-if($_SERVER['REQUEST_METHOD']=='POST'){	
-	//hecking the required params 
-	if(isset($_POST['title']) and isset($_POST['message']) and isset($_POST['username'])){
+//checking the required params 
+if(isset($title) and isset($message) and isset($username)) {
 
-		//creating a new push
-		$push = null; 
-		//first check if the push has an image with it
-		if(isset($_POST['image'])){
-			$push = new Push(
-					$_POST['title'],
-					$_POST['message'],
-					$_POST['image']
-				);
-		}else{
-			//if the push don't have an image give null in place of image
-			$push = new Push(
-					$_POST['title'],
-					$_POST['message'],
-					null
-				);
-		}
+	//creating a new push
+	$push = null; 
 
-		//getting the push from push object
-		$mPushNotification = $push->getPush(); 
-
-		//getting the token from database object 
-		$devicetoken = $db->getTokenByUsername($_POST['username']);
-
-		//creating firebase class object 
-		$firebase = new Firebase(); 
-
-		//sending push notification and displaying result 
-		echo $firebase->send($devicetoken, $mPushNotification);
+	//first check if the push has an image with it
+	if(isset($image)){
+		$push = new Push(
+				$title,
+				$message,
+				$image
+			);
 	}else{
-		$response['error']=true;
-		$response['message']='Parameters missing';
+		//if the push don't have an image give null in place of image
+		$push = new Push(
+				$title,
+				$message,
+				null
+			);
 	}
+
+	//getting the push from push object
+	$mPushNotification = $push->getPush(); 
+
+	//getting the token from database object 
+	$devicetoken = $db->getTokenByUsername($username);
+
+	//creating firebase class object 
+	$firebase = new Firebase(); 
+
+	//sending push notification and displaying result 
+	echo $firebase->send($devicetoken, $mPushNotification);
+
 }else{
 	$response['error']=true;
-	$response['message']='Invalid request';
+	$response['message']='Parameters missing';
 }
 
 echo json_encode($response);

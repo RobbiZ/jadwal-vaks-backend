@@ -99,6 +99,27 @@ if($simpan=="BARU"){
 			('$plasmacode','$tanggal','$jenis','$populasi','$umur','$aplikasi','$stockcode','$pelaksana')";
 
 	$hasil = mysqli_query($kon, $sql);
+
+	
+	$title = "Jadwal Vaksinasi Baru";
+	
+	$sql = "SELECT custname FROM plasma, customer 
+			WHERE plasma.custcode = customer.custcode 
+			AND plasmacode = '$plasmacode' ";
+    $query = mysqli_query($kon, $sql);
+	$row = mysqli_fetch_array($query);
+	$custname = $row['custname'];
+	$message = "$custname";
+	
+	$sql = "SELECT username FROM user WHERE uid = '$pelaksana' ";
+    $query = mysqli_query($kon, $sql);
+	$row = mysqli_fetch_array($query);
+	$username = $row['username'];
+
+	echo $message;
+
+	include "../_mobile/sendSinglePush.php";
+
 	echo "<script>location.href='home.php?hal=vaksinasi-data&status=tambah_sukses'</script>";
 }
 
