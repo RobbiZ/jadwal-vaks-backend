@@ -14,7 +14,7 @@
 				AND plasma.custcode = customer.custcode
 				AND vaksinasi.status = 'BELUM'
 				AND user.username = '$username'
-				ORDER BY tanggal DESC ";
+				ORDER BY tanggal DESC, vacid DESC ";
 		
 		$result = mysqli_query($kon, $sql);
 
