@@ -14,6 +14,7 @@
 				AND plasma.custcode = customer.custcode
 				AND vaksinasi.status = 'BELUM'
 				AND user.username = '$username'
+				AND tanggal BETWEEN (CURRENT_DATE() - INTERVAL 2 MONTH) AND (CURRENT_DATE() + INTERVAL 1 MONTH)
 				ORDER BY tanggal DESC, vacid DESC ";
 		
 		$result = mysqli_query($kon, $sql);

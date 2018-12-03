@@ -6,7 +6,7 @@
 
 		$username = $_GET['username'];
 		
-		$sql = "SELECT vacid, custname, plasmaname, address, city, phone, area, tanggal, populasi, jenis, umur, aplikasi, productname
+		$sql = "SELECT vacid, custname, plasmaname, address, city, phone, area, tanggal, populasi, jenis, umur, aplikasi, productname, donumber, batch, kmstart, kmfinish, remark, reschedule, newdate, cancel
 				FROM vaksinasi, plasma, user, customer, product 
 				WHERE vaksinasi.plasmacode = plasma.plasmacode 
 				AND vaksinasi.pelaksana = user.uid 
@@ -14,6 +14,7 @@
 				AND plasma.custcode = customer.custcode
 				AND vaksinasi.status = 'SUDAH'
 				AND user.username = '$username'
+				AND tanggal BETWEEN (CURRENT_DATE() - INTERVAL 2 MONTH) AND (CURRENT_DATE() + INTERVAL 1 MONTH)
 				ORDER BY tanggal DESC, vacid DESC ";
 		
 		$result = mysqli_query($kon, $sql);
