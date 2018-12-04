@@ -41,7 +41,7 @@ if($simpan=="BARU"){
 		$dataValid = "TIDAK";
 	}
 
-	if ($jenis==0)
+	if ($jenis=="0")
 	{
 		echo '<div class="alert alert-danger">
      		jenis harus di pilih salah satu </div>	';
@@ -62,7 +62,7 @@ if($simpan=="BARU"){
 		$dataValid = "TIDAK";
 	}
 
-	if ($aplikasi==0)
+	if ($aplikasi=="0")
 	{
 		echo '<div class="alert alert-danger">
      		aplikasi harus di pilih salah satu </div>	';
