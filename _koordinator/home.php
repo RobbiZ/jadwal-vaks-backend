@@ -81,7 +81,7 @@ if($_SESSION['login'] == false){
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg dashbard-1">
+    <div id="page-wrapper" class="gray-bg dashbard-1" style="padding: 0">
         <div class="row border-bottom">
         <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -90,28 +90,13 @@ if($_SESSION['login'] == false){
         </nav>
         </div>
 
-        <div class="wrapper wrapper-content">
+        <div class="wrapper wrapper-content" style="padding-top: 0">
             <?php
                 error_reporting(0);
                 $halaman = $_GET['hal'];
                 switch ($halaman) {
                     case ''                     : include 'overview.php'; break;
                     case 'overview'             : include 'overview.php'; break;
-                    case 'user-data'            : include 'user-data.php'; break;
-                    case 'user-tambah'          : include 'user-tambah.php'; break;
-                    case 'user-simpan'          : include 'user-simpan.php'; break;
-                    case 'user-edit'            : include 'user-edit.php'; break;
-                    case 'user-hapus'           : include 'user-hapus.php'; break;
-                    case 'customer-data'        : include 'customer-data.php'; break;
-                    case 'customer-tambah'      : include 'customer-tambah.php'; break;
-                    case 'customer-simpan'      : include 'customer-simpan.php'; break;
-                    case 'customer-edit'        : include 'customer-edit.php'; break;
-                    case 'customer-hapus'       : include 'customer-hapus.php'; break;
-                    case 'product-data'         : include 'product-data.php'; break;
-                    case 'product-tambah'       : include 'product-tambah.php'; break;
-                    case 'product-simpan'       : include 'product-simpan.php'; break;
-                    case 'product-edit'         : include 'product-edit.php'; break;
-                    case 'product-hapus'        : include 'product-hapus.php'; break;
                     case 'plasma-data'          : include 'plasma-data.php'; break;
                     case 'plasma-tambah'        : include 'plasma-tambah.php'; break;
                     case 'plasma-simpan'        : include 'plasma-simpan.php'; break;

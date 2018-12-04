@@ -116,7 +116,7 @@ if($simpan=="BARU"){
 	$row = mysqli_fetch_array($query);
 	$username = $row['username'];
 
-	echo $message;
+	//echo $message;
 
 	include "../_mobile/sendSinglePush.php";
 

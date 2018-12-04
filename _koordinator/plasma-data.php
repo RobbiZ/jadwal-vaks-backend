@@ -1,4 +1,4 @@
-<div class="wrapper wrapper-content animated fadeInRight" style="zoom: 0.9;">
+<div class="wrapper wrapper-content animated fadeInRight" style="zoom: 0.9; padding: 10">
     <div class="row">
         <div class="col-lg-12">
         <?php 
@@ -19,7 +19,7 @@
                     <h2><b>Data Plasma</b></h2>
                     <a class="btn btn-success" href="home.php?hal=plasma-tambah"><i class="fa fa-plus-square"></i>&nbsp;Baru</a>                    
                 </div>
-                <div class="ibox-content">                
+                <div class="ibox-content" style="padding: 10">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover dataTables-examples" >
                             <thead>

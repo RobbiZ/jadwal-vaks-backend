@@ -1,4 +1,4 @@
-<div class="wrapper wrapper-content animated fadeInRight" style="zoom: 0.8;">
+<div class="wrapper wrapper-content animated fadeInRight" style="zoom: 0.8; padding: 10">
     <div class="row">
         <div class="col-lg-12">
         <?php 
@@ -18,7 +18,7 @@
                 <div class="ibox-title">
                     <h2><b>Realisasi Vaksinasi</b></h2>
                 </div>
-                <div class="ibox-content">                
+                <div class="ibox-content" style="padding: 10">                
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover dataTables-examples" >
                             <thead>

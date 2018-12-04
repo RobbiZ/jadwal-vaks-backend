@@ -19,7 +19,7 @@
                     <h2><b>Data Product</b></h2>
                     <a class="btn btn-success" href="home.php?hal=product-tambah"><i class="fa fa-plus-square"></i>&nbsp;Baru</a>
                 </div>
-                <div class="ibox-content">                
+                <div class="ibox-content" style="padding: 10">                
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover dataTables-examples" >
                             <thead>
