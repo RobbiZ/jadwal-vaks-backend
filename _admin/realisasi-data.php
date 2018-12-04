@@ -41,7 +41,7 @@
                             <tbody>
                             <?php
                             include '../koneksi.php';
-                            $sql = "SELECT * FROM vaksinasi,user,product,plasma,customer WHERE vaksinasi.pelaksana = user.uid AND vaksinasi.stockcode=product.stockcode AND vaksinasi.plasmacode = plasma.plasmacode AND plasma.custcode = customer.custcode ORDER BY tanggal DESC";
+                            $sql = "SELECT * FROM vaksinasi,user,product,plasma,customer WHERE vaksinasi.pelaksana = user.uid AND vaksinasi.stockcode=product.stockcode AND vaksinasi.plasmacode = plasma.plasmacode AND plasma.custcode = customer.custcode ORDER BY tanggal DESC, vacid DESC";
                             $query = mysqli_query($kon, $sql);
                             while ($row = mysqli_fetch_array($query)) { 
                             if (!$query)

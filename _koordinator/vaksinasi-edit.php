@@ -32,7 +32,7 @@
       <label class="control-label" for="plasmaname">PLASMA</label>
       <div class="controls"> 
         <select class="form-control" name="plasmacode">
-          <option >Pilih Plasma</option>
+          <option value="0">Pilih Plasma</option>
           <?php
           echo "<option selected value='" .$plasmacode."'>" . $custname." - ".$plasmaname. "</option>";
           include '../koneksi.php';
@@ -61,7 +61,7 @@
       <label class="control-label" for="jenis">JENIS</label>
       <div class="controls"> 
         <select class="form-control" name="jenis">
-          <option >Pilih Jenis Ternak</option>
+          <option value="0">Pilih Jenis Ternak</option>
           <option value="LAYER" <?php if ($jenis == "LAYER") echo "selected"; ?> >LAYER</option>
           <option value="BROILER" <?php if ($jenis == "BROILER") echo "selected"; ?> >BROILER</option>
           <option value="PEJANTAN" <?php if ($jenis == "PEJANTAN") echo "selected"; ?> >PEJANTAN</option>
@@ -95,7 +95,7 @@
       <label class="control-label" for="aplikasi">APLIKASI</label>
       <div class="controls"> 
         <select class="form-control" name="aplikasi">
-          <option>Pilih Cara Aplikasi Vaksinasi</option>
+          <option value="0">Pilih Cara Aplikasi Vaksinasi</option>
           <option value="SUBKUTAN" <?php if ($aplikasi == "SUBKUTAN") echo "selected"; ?> >SUBKUTAN</option>
           <option value="IM-DADA" <?php if ($aplikasi == "IM-DADA") echo "selected"; ?> >INTRAMUSCULER DADA</option>
           <option value="IM-PAHA" <?php if ($aplikasi == "IM-PAHA") echo "selected"; ?> >INTRAMUSCULER PAHA</option>
@@ -115,7 +115,7 @@
       <label class="control-label" for="productname">PRODUK</label>
       <div class="controls"> 
         <select class="form-control" name="stockcode">
-          <option>Pilih Produk</option>
+          <option value="0">Pilih Produk</option>
           <?php
           echo "<option selected value='" .$stockcode."'>" . $productname."</option>";
           include '../koneksi.php';
@@ -135,7 +135,7 @@
       <label class="control-label" for="username">PELAKSANA</label>
       <div class="controls"> 
         <select class="form-control" name="pelaksana">
-          <option>Pilih Pelaksana</option>
+          <option value="0">Pilih Pelaksana</option>
           <?php
           echo "<option selected value='" .$pelaksana."'>" . $username."</option>";
           include '../koneksi.php';

@@ -9,7 +9,7 @@
       <label class="control-label" for="plasmaname">PLASMA</label>
       <div class="controls"> 
         <select class="form-control" name="plasmacode">
-          <option >Pilih Plasma</option>
+          <option value="A">Pilih Plasma</option>
           <?php
           include '../koneksi.php';
           $sql = "SELECT * FROM plasma,customer WHERE plasma.custcode = customer.custcode ORDER BY custname, plasmaname";
@@ -37,7 +37,7 @@
       <label class="control-label" for="jenis">JENIS</label>
       <div class="controls"> 
         <select class="form-control" name="jenis">
-          <option >Pilih Jenis Ternak</option>
+          <option value="0">Pilih Jenis Ternak</option>
           <option value="LAYER">LAYER</option>
           <option value="BROILER">BROILER</option>
           <option value="PEJANTAN">PEJANTAN</option>
@@ -71,7 +71,7 @@
       <label class="control-label" for="aplikasi">APLIKASI</label>
       <div class="controls"> 
         <select class="form-control" name="aplikasi">
-          <option>Pilih Cara Aplikasi Vaksinasi</option>
+          <option value="0">Pilih Cara Aplikasi Vaksinasi</option>
           <option value="SUBKUTAN">SUBKUTAN</option>
           <option value="IM-DADA">INTRAMUSCULER DADA</option>
           <option value="IM-PAHA">INTRAMUSCULER PAHA</option>
@@ -91,7 +91,7 @@
       <label class="control-label" for="productname">PRODUK</label>
       <div class="controls"> 
         <select class="form-control" name="stockcode">
-          <option>Pilih Produk</option>
+          <option value="0">Pilih Produk</option>
           <?php
           include '../koneksi.php';
           $sql = "SELECT * FROM product ORDER BY productname";
@@ -110,7 +110,7 @@
       <label class="control-label" for="username">PELAKSANA</label>
       <div class="controls"> 
         <select class="form-control" name="pelaksana">
-          <option >Pilih Pelaksana</option>
+          <option value="0">Pilih Pelaksana</option>
           <?php
           include '../koneksi.php';
           $sql = "SELECT * FROM user WHERE role != 'admin' ORDER BY username";

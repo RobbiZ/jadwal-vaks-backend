@@ -27,7 +27,7 @@ if($simpan=="BARU"){
 	
 	$dataValid="YA";
 
-	if (strlen(trim($plasmacode))==0)
+	if ($plasmacode==0)
 	{
 		echo '<div class="alert alert-danger">
      		plasmacode harus diisi </div>	';
@@ -41,7 +41,7 @@ if($simpan=="BARU"){
 		$dataValid = "TIDAK";
 	}
 
-	if (strlen(trim($jenis))==0)
+	if ($jenis==0)
 	{
 		echo '<div class="alert alert-danger">
      		jenis harus di pilih salah satu </div>	';
@@ -51,32 +51,32 @@ if($simpan=="BARU"){
 	if (strlen(trim($populasi))==0)
 	{
 		echo '<div class="alert alert-danger">
-     		populasi harus di pilih salah satu </div>	';
+     		populasi harus diisi </div>	';
 		$dataValid = "TIDAK";
 	}
 
 	if (strlen(trim($umur))==0)
 	{
 		echo '<div class="alert alert-danger">
-     		umur harus di pilih salah satu </div>	';
+     		umur harus diisi </div>	';
 		$dataValid = "TIDAK";
 	}
 
-	if (strlen(trim($aplikasi))==0)
+	if ($aplikasi==0)
 	{
 		echo '<div class="alert alert-danger">
      		aplikasi harus di pilih salah satu </div>	';
 		$dataValid = "TIDAK";
 	}
 
-	if (strlen(trim($stockcode))==0)
+	if ($stockcode==0)
 	{
 		echo '<div class="alert alert-danger">
      		stockcode harus di pilih salah satu </div>	';
 		$dataValid = "TIDAK";
 	}
 
-	if (strlen(trim($pelaksana))==0)
+	if ($pelaksana==0)
 	{
 		echo '<div class="alert alert-danger">
      		pelaksana harus di pilih salah satu </div>	';
