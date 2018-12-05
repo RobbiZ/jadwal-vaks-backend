@@ -2,7 +2,7 @@
 include "../koneksi.php";
 ?>
 
-<div class="wrapper wrapper-content animated fadeInRight" style="zoom: 1.2;">
+<div class="wrapper wrapper-content animated fadeInRight" style="zoom: 1.2; padding-top: 0">
     <div class="row">
         <a href="home.php?hal=vaksinasi-data" class="col-lg-6">
             <div class="widget style1 blue-bg">

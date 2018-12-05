@@ -90,8 +90,8 @@ if($_SESSION['login'] == false){
         </div>
     </nav>
 
-    <div id="page-wrapper" class="gray-bg dashbard-1" style="padding: 0">
-        <div class="row border-bottom">
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom" style="padding: 0">
         <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-default " href="#"><i class="fa fa-bars"></i> </a>    
@@ -99,7 +99,7 @@ if($_SESSION['login'] == false){
         </nav>
         </div>
 
-        <div class="wrapper wrapper-content" style="padding-top: 0">
+        <div class="wrapper wrapper-content" style="padding-top: 0; padding-left: 0; padding-right: 0">
             <?php
                 error_reporting(0);
                 $halaman = $_GET['hal'];
