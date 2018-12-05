@@ -4,32 +4,34 @@
 
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 
-		$username = $_GET['username'];
+		$vacid 	  = $_POST['vacid'];
+		$donumber = $_POST['donumber'];
+		$batch    = $_POST['batch'];
+		$kmstart  = $_POST['kmstart'];
+		$kmfinish = $_POST['kmfinish'];
+		$remark   = $_POST['remark'];
 		
-		$sql = "SELECT vacid, custname, plasmaname, address, city, phone, area, 
-				tanggal, populasi, jenis, umur, aplikasi, productname
-				FROM vaksinasi, plasma, user, customer, product 
-				WHERE vaksinasi.plasmacode = plasma.plasmacode 
-				AND vaksinasi.pelaksana = user.uid 
-				AND vaksinasi.stockcode = product.stockcode
-				AND plasma.custcode = customer.custcode
-				AND vaksinasi.status = 'BELUM'
-				AND user.username = '$username'
-				ORDER BY tanggal DESC ";
-		
+		$sql = "UPDATE vaksinasi SET 
+				donumber = '$donumber', 
+				batch    = '$batch', 
+				kmstart  = '$kmstart', 
+				kmfinish = '$kmfinish', 
+				remark   = '$remark', 
+				reschedule 	= NULL,
+				newdate 	= NULL,
+				cancel 		= NULL,
+				status 		= 'SUDAH' 
+				WHERE vacid = '$vacid' ";
+
 		$result = mysqli_query($kon, $sql);
-
-		$json = array();
-
-		if(mysqli_num_rows($result)){
-			while($row=mysqli_fetch_assoc($result)){
-			$json[]=$row;
-			}
-		}
-
+		
 		mysqli_close($kon);
 
-		echo json_encode($json); 
+		if($result){
+			echo json_encode(['status'=>true]);
+		}else{
+			echo json_encode(['status'=>false]);
+		}
 	}
 
 ?> 
