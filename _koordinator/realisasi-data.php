@@ -31,10 +31,10 @@
                                     <th>DO NUMBER</th>
                                     <th>KM AWAL</th>
                                     <th>KM AKHIR</th>
+                                    <th>REMARK</th>
                                     <th>RESCHEDULE</th>
                                     <th>TANGGAL BARU</th>
                                     <th>CANCEL</th>
-                                    <th>REMARK</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
@@ -56,6 +56,7 @@
                                     <td><?php echo $row['donumber'];?></td>
                                     <td><?php echo $row['kmstart'];?></td>
                                     <td><?php echo $row['kmfinish'];?></td>
+                                    <td><?php echo $row['remark'];?></td>
                                     <?php
                                     if ($row['reschedule']=='A'){$showReschedule='Ayam dalam pengobatan';}
                                     else if ($row['reschedule']=='B'){$showReschedule='Ayam terlalu kecil';}
@@ -77,7 +78,6 @@
                                     else{$showCancel='';}
                                     ?>
                                     <td><?php echo $showCancel;?></td>
-                                    <td><?php echo $row['remark'];?></td>
                                     <td class="center">
                                         <center>
                                             <a class="btn btn-sm btn-success" href="home.php?hal=realisasi-edit&vacid=<?php echo $row['vacid']?>" title="Edit"><i class="fa fa-edit"></i>&nbsp REALISASI</a>
