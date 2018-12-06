@@ -14,6 +14,9 @@
 				AND plasma.custcode = customer.custcode
 				AND vaksinasi.status = 'SUDAH'
 				AND user.username = '$username'
+				AND reschedule IS NULL
+				AND newdate IS NULL
+				AND cancel IS NULL
 				AND tanggal BETWEEN (CURRENT_DATE() - INTERVAL 2 MONTH) AND (CURRENT_DATE() + INTERVAL 1 MONTH)
 				ORDER BY tanggal DESC, vacid DESC ";
 		
