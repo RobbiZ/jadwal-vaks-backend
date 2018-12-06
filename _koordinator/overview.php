@@ -48,7 +48,7 @@ include "../koneksi.php";
             <div class="widget style1 yellow-bg">
                 <div class="row">
                     <div class="col-xs-4">
-                        <i class="fa fa-cogs fa-5x"></i>
+                        <i class="fa fa-home fa-5x"></i>
                     </div>
                     <div class="col-xs-8 text-right">
                         <span> Data Plasma </span>
