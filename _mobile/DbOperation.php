@@ -32,17 +32,6 @@ class DbOperation
         }
     }
 
-    //the method will check if username already exist 
-    private function isUsernameExist($username){
-        $stmt = $this->con->prepare("SELECT uid FROM user WHERE username = ?");
-        $stmt->bind_param("s",$username);
-        $stmt->execute();
-        $stmt->store_result();
-        $num_rows = $stmt->num_rows;
-        $stmt->close();
-        return $num_rows > 0;
-    }
-
     //getting all tokens to send push to all devices
     public function getAllTokens(){
         $stmt = $this->con->prepare("SELECT token FROM user");
